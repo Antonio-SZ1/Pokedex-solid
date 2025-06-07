@@ -3,6 +3,7 @@ import { createResource } from 'solid-js';
 import VistaDetalle from '../componentes/VistaDetalle';
 import Cargando from '../componentes/Cargando';
 import { obtenerPokemon } from '../servicios/pokeapi';
+import { Pokemon } from '../types';
 
 export default function DetallePokemon() {
   const params = useParams();
@@ -15,7 +16,7 @@ export default function DetallePokemon() {
       when={!pokemon.loading} 
       fallback={<Cargando />}
     >
-      <VistaDetalle pokemon={pokemon()} />
+      <VistaDetalle pokemon={pokemon()!} />
     </Show>
   );
 }

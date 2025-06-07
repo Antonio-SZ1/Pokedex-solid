@@ -1,5 +1,11 @@
-export default function TiposPokemon(props) {
-  const tipoColores = {
+import { TipoPokemon } from '../types';
+
+interface TiposPokemonProps {
+  tipos: TipoPokemon[];
+}
+
+export default function TiposPokemon(props: TiposPokemonProps) {
+  const tipoColores: Record<string, string> = {
     normal: 'bg-pokemon-normal',
     fire: 'bg-pokemon-fire',
     water: 'bg-pokemon-water',
@@ -22,8 +28,9 @@ export default function TiposPokemon(props) {
 
   return (
     <div class="flex flex-wrap justify-center gap-2 mt-3">
-      {props.tipos.map(tipo => (
+      {props.tipos.map((tipo, index) => (
         <span 
+          key={index}
           class={`px-3 py-1 rounded-full text-white text-xs font-semibold capitalize ${
             tipoColores[tipo.type.name] || 'bg-gray-500'
           }`}

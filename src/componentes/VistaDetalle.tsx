@@ -1,7 +1,12 @@
 import { A } from '@solidjs/router';
 import TiposPokemon from './TiposPokemon';
+import { Pokemon } from '../types';
 
-export default function VistaDetalle(props) {
+interface VistaDetalleProps {
+  pokemon: Pokemon;
+}
+
+export default function VistaDetalle(props: VistaDetalleProps) {
   const pokemon = props.pokemon;
   
   return (
@@ -10,7 +15,7 @@ export default function VistaDetalle(props) {
         <div class="md:flex">
           <div class="md:w-1/3 p-6 flex flex-col items-center">
             <img 
-              src={pokemon.sprites.front_default} 
+              src={pokemon.sprites.other["official-artwork"].front_default || pokemon.sprites.front_default} 
               alt={pokemon.name} 
               class="w-48 h-48 object-contain"
             />
@@ -35,8 +40,8 @@ export default function VistaDetalle(props) {
           <div class="md:w-2/3 p-6 border-t md:border-t-0 md:border-l border-gray-100">
             <h3 class="text-xl font-bold mb-4">Estadísticas</h3>
             <div class="space-y-3">
-              {pokemon.stats.map(stat => (
-                <div>
+              {pokemon.stats.map((stat, index) => (
+                <div key={index}>
                   <div class="flex justify-between mb-1">
                     <span class="capitalize">{stat.stat.name.replace('-', ' ')}</span>
                     <span class="font-bold">{stat.base_stat}</span>
@@ -52,8 +57,8 @@ export default function VistaDetalle(props) {
             
             <h3 class="text-xl font-bold mt-8 mb-4">Habilidades</h3>
             <div class="flex flex-wrap gap-2">
-              {pokemon.abilities.map(ability => (
-                <span class="badge badge-outline capitalize">
+              {pokemon.abilities.map((ability, index) => (
+                <span key={index} class="badge badge-outline capitalize">
                   {ability.ability.name.replace('-', ' ')}
                 </span>
               ))}

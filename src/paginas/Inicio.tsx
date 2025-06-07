@@ -2,6 +2,7 @@ import { createResource } from 'solid-js';
 import TarjetaPokemon from '../componentes/TarjetaPokemon';
 import Cargando from '../componentes/Cargando';
 import { obtenerListaPokemon } from '../servicios/pokeapi';
+import { Pokemon } from '../types';
 
 export default function Inicio() {
   const [pokemons] = createResource(obtenerListaPokemon);
@@ -14,7 +15,7 @@ export default function Inicio() {
           fallback={<Cargando />}
         >
           <For each={pokemons()}>
-            {(pokemon) => <TarjetaPokemon pokemon={pokemon} />}
+            {(pokemon: Pokemon) => <TarjetaPokemon pokemon={pokemon} />}
           </For>
         </Show>
       </div>

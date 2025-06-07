@@ -1,7 +1,12 @@
 import { A } from '@solidjs/router';
 import TiposPokemon from './TiposPokemon';
+import { Pokemon } from '../types';
 
-export default function TarjetaPokemon(props) {
+interface TarjetaPokemonProps {
+  pokemon: Pokemon;
+}
+
+export default function TarjetaPokemon(props: TarjetaPokemonProps) {
   return (
     <A 
       href={`/pokemon/${props.pokemon.id}`}
