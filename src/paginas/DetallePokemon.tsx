@@ -1,5 +1,5 @@
 import { useParams } from '@solidjs/router';
-import { createResource } from 'solid-js';
+import { createResource, Show } from 'solid-js';
 import VistaDetalle from '../componentes/VistaDetalle';
 import Cargando from '../componentes/Cargando';
 import { obtenerPokemon } from '../servicios/pokeapi';
