@@ -1,3 +1,4 @@
+import { For } from 'solid-js';
 import { TipoPokemon } from '../types';
 
 interface TiposPokemonProps {
@@ -28,16 +29,17 @@ export default function TiposPokemon(props: TiposPokemonProps) {
 
   return (
     <div class="flex flex-wrap justify-center gap-2 mt-3">
-      {props.tipos.map((tipo, index) => (
-        <span 
-          key={index}
-          class={`px-3 py-1 rounded-full text-white text-xs font-semibold capitalize ${
-            tipoColores[tipo.type.name] || 'bg-gray-500'
-          }`}
-        >
-          {tipo.type.name}
-        </span>
-      ))}
+      <For each={props.tipos}>
+        {(tipo) => (
+          <span 
+            class={`px-3 py-1 rounded-full text-white text-xs font-semibold capitalize ${
+              tipoColores[tipo.type.name] || 'bg-gray-500'
+            }`}
+          >
+            {tipo.type.name}
+          </span>
+        )}
+      </For>
     </div>
   );
 }

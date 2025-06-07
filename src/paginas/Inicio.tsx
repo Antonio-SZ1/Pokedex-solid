@@ -1,11 +1,12 @@
-import { createResource } from 'solid-js';
+import { createResource, For, Show } from 'solid-js';
 import TarjetaPokemon from '../componentes/TarjetaPokemon';
 import Cargando from '../componentes/Cargando';
 import { obtenerListaPokemon } from '../servicios/pokeapi';
 import { Pokemon } from '../types';
 
 export default function Inicio() {
-  const [pokemons] = createResource(obtenerListaPokemon);
+  // Usamos una función wrapper sin parámetros
+  const [pokemons] = createResource(() => obtenerListaPokemon(151));
 
   return (
     <div>

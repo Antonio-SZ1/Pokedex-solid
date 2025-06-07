@@ -1,4 +1,5 @@
 import { A } from '@solidjs/router';
+import { For } from 'solid-js';
 import TiposPokemon from './TiposPokemon';
 import { Pokemon } from '../types';
 
@@ -40,28 +41,32 @@ export default function VistaDetalle(props: VistaDetalleProps) {
           <div class="md:w-2/3 p-6 border-t md:border-t-0 md:border-l border-gray-100">
             <h3 class="text-xl font-bold mb-4">Estadísticas</h3>
             <div class="space-y-3">
-              {pokemon.stats.map((stat, index) => (
-                <div key={index}>
-                  <div class="flex justify-between mb-1">
-                    <span class="capitalize">{stat.stat.name.replace('-', ' ')}</span>
-                    <span class="font-bold">{stat.base_stat}</span>
+              <For each={pokemon.stats}>
+                {(stat) => (
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="capitalize">{stat.stat.name.replace('-', ' ')}</span>
+                      <span class="font-bold">{stat.base_stat}</span>
+                    </div>
+                    <progress 
+                      class="progress progress-primary w-full" 
+                      value={stat.base_stat} 
+                      max="255"
+                    ></progress>
                   </div>
-                  <progress 
-                    class="progress progress-primary w-full" 
-                    value={stat.base_stat} 
-                    max="255"
-                  ></progress>
-                </div>
-              ))}
+                )}
+              </For>
             </div>
             
             <h3 class="text-xl font-bold mt-8 mb-4">Habilidades</h3>
             <div class="flex flex-wrap gap-2">
-              {pokemon.abilities.map((ability, index) => (
-                <span key={index} class="badge badge-outline capitalize">
-                  {ability.ability.name.replace('-', ' ')}
-                </span>
-              ))}
+              <For each={pokemon.abilities}>
+                {(ability) => (
+                  <span class="badge badge-outline capitalize">
+                    {ability.ability.name.replace('-', ' ')}
+                  </span>
+                )}
+              </For>
             </div>
           </div>
         </div>
