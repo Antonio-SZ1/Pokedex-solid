@@ -2,19 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos personalizados */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f8fafc;
 }
 
-.progress {
-  height: 0.5rem;
-}
-
-/* Animación de carga */
+/* Animaciones */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+/* Personalización de componentes Tailwind */
+.progress {
+  height: 0.5rem;
 }
