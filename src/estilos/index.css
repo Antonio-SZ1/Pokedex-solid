@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos personalizados */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f8fafc;
+}
+
+.progress {
+  height: 0.5rem;
 }
 
 /* Animaciones */
@@ -17,7 +20,17 @@ body {
   animation: spin 1s linear infinite;
 }
 
-/* Personalización de componentes Tailwind */
-.progress {
-  height: 0.5rem;
+/* Efectos para tarjetas */
+.pokemon-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Transición para búsqueda */
+.search-transition {
+  transition: all 0.3s ease;
 }
