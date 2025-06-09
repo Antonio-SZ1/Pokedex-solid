@@ -1,7 +1,7 @@
 import { A } from '@solidjs/router';
 import TiposPokemon from './TiposPokemon';
 import { Pokemon } from '../types';
-import pokeball from '../assets/pokeball.svg';
+import pokeball from '../assets/pokeball.png';
 
 interface TarjetaPokemonProps {
   pokemon: Pokemon;

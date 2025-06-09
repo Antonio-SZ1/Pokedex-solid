@@ -7,7 +7,7 @@ export default function Cabecera() {
         <A href="/" class="flex items-center space-x-2">
           <div class="bg-white rounded-full p-1">
             <img 
-              src="/src/assets/pokeball.svg" 
+              src="/src/assets/pokeball.png" 
               alt="Pokeball" 
               class="w-8 h-8"
             />
