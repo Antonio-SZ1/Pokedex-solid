@@ -11,7 +11,7 @@ body {
   height: 0.5rem;
 }
 
-/* Animaciones */
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -20,7 +20,7 @@ body {
   animation: spin 1s linear infinite;
 }
 
-/* Efectos para tarjetas */
+
 .pokemon-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -30,7 +30,7 @@ body {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* Transición para búsqueda */
+
 .search-transition {
   transition: all 0.3s ease;
 }
