@@ -6,11 +6,7 @@ export default function Cabecera() {
       <div class="container mx-auto px-4 py-3 flex items-center">
         <A href="/" class="flex items-center space-x-2">
           <div class="bg-white rounded-full p-1">
-            <img 
-              src="/src/assets/pokeball.png" 
-              alt="Pokeball" 
-              class="w-8 h-8"
-            />
+          
           </div>
           <h1 class="text-white text-2xl font-bold">Pokédex</h1>
         </A>
