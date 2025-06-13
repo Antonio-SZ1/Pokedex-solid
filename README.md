@@ -16,9 +16,14 @@ Esta es una aplicación de Pokédex minimalista que muestra los primeros 151 Pok
 - DaisyUI
 - Vite
 
-## Instalación
+## Instalación y uso en linea
 
-1. Clona el repositorio:
+1. Pagina en linea
+
+   https://16bee27a.pokedex-solid.pages.dev/
+
+2. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/pokedex-solid.git
+   git clone git@github.com:Antonio-SZ1/pokedex-solid.git
    cd pokedex-solid
+   nmp run dev
